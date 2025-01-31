@@ -1,0 +1,10 @@
+{
+  "domain": "tmap_travel_time",
+  "name": "Tmap Travel Time",
+  "version": "1.0.0",
+  "documentation": "https://github.com/af950833/tmap_travel_time",
+  "requirements": [],
+  "codeowners": ["@af950833"],
+  "iot_class": "cloud_polling",
+  "config_flow": true
+}
