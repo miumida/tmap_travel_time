@@ -2,5 +2,6 @@
   "name": "Tmap Travel Time",
   "country": "KR",
   "domains": ["sensor"],
-  "render_readme": true
+  "render_readme": true,
+  "icons": ["images/logo.png"]
 }
