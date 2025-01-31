@@ -1,5 +1,6 @@
 {
   "domain": "tmap_travel_time",
+  "after_dependencies": ["device_tracker","zone"],
   "name": "Tmap Travel Time",
   "version": "1.0.0",
   "documentation": "https://github.com/af950833/tmap_travel_time",
