@@ -36,6 +36,7 @@ Home Assistant에서 TMAP API를 이용하여 자동차 운행 기준 도착 예
 
 - `zone` 또는 `device_tracker`로 설정 가능합니다. (`zone`과 `device_tracker`는 위도 및 경도 속성을 포함해야 합니다.)
 - **Google Maps 컴포넌트**와 함께 사용하여 `device_tracker`로 현재 위치를 설정하고, `zone`을 집이나 직장으로 등록하면 현 위치에서의 운행 예상 시간을 자동으로 계산할 수 있습니다.
+- 두 지점이 너무 근접할 경우 TMAP API에서 에러가 발생하여 센서값이 Unknown으로 표시될 수 있습니다.
 
 ---
 이제 Home Assistant에서 TMAP API를 활용하여 실시간 교통 정보를 반영한 운행 예상 시간을 확인할 수 있습니다!
