@@ -1,0 +1,16 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tmap Travel Time Configuration",
+        "data": {
+          "name": "Sensor Name",
+          "start_entity": "Start Entity ID",
+          "end_entity": "End Entity ID",
+          "api_key": "TMAP API Key",
+          "scan_interval": "Update Interval (seconds)"
+        }
+      }
+    }
+  }
+}
