@@ -1,5 +1,7 @@
 # Tmap Travel Time for Home Assistant
 
+![Tmap Travel Time Logo](images/logo.png)
+
 Home Assistant에서 TMAP API를 이용하여 자동차 운행 기준 도착 예상 시간을 표시하는 센서입니다.
 
 ## 1. TMAP API 사용 준비
