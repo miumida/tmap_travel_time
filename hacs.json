@@ -1,0 +1,6 @@
+{
+  "name": "Tmap Travel Time",
+  "country": "KR",
+  "domains": ["sensor"],
+  "render_readme": true
+}
