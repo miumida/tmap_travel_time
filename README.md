@@ -1,5 +1,3 @@
-# tmap_travel_time
-
 # Tmap Travel Time for Home Assistant
 
 Home Assistant에서 TMAP API를 이용하여 자동차 운행 기준 도착 예상 시간을 표시하는 센서입니다.
@@ -10,6 +8,8 @@ Home Assistant에서 TMAP API를 이용하여 자동차 운행 기준 도착 예
 2. "앱 만들기"를 통해 앱을 생성하고 앱 키(App Key)를 확인합니다. (이후 설정에 필요하므로 메모해 두세요.)
 3. 초기 화면에서 **교통/위치 -> TMAP API**를 클릭합니다.
 4. 좌측 메뉴에서 **API 사용 요금 -> 무료체험(Free) 사용하기**를 신청합니다.
+
+[TMAP API 가이드](https://openapi.sk.com/products/detail?linkMenuSeq=122)를 참고하세요.
 
 ## 2. Home Assistant에 Tmap Travel Time 설치
 
@@ -37,3 +37,4 @@ Home Assistant에서 TMAP API를 이용하여 자동차 운행 기준 도착 예
 
 ---
 이제 Home Assistant에서 TMAP API를 활용하여 실시간 교통 정보를 반영한 운행 예상 시간을 확인할 수 있습니다!
+
