@@ -41,3 +41,5 @@ Home Assistant에서 TMAP API를 이용하여 자동차 운행 기준 도착 예
 ---
 이제 Home Assistant에서 TMAP API를 활용하여 실시간 교통 정보를 반영한 운행 예상 시간을 확인할 수 있습니다!
 
+25/02/12 Ver1.0.1 TMAP API에서 에러가 발생하는 경우(ex: 두 지점이 근거리) 소요 시간을 0분으로 예외 처리
+
