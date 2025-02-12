@@ -83,7 +83,8 @@ class TmapDataCoordinator(DataUpdateCoordinator):
             return round(total_time / 60)
 
         except Exception as e:
-            raise UpdateFailed(f"Error updating travel time: {str(e)}")
+            _LOGGER.error(f"Error updating travel time: {str(e)}")
+            return 0
 
 class TmapTravelTimeSensor(SensorEntity, RestoreEntity):
     """Representation of a TMAP Travel Time sensor."""
