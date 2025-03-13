@@ -1,6 +1,9 @@
 from homeassistant import config_entries
 from homeassistant.core import callback
 import voluptuous as vol
+import logging
+
+_LOGGER = logging.getLogger(__name__)
 
 class TmapTravelTimeConfigFlow(config_entries.ConfigFlow, domain="tmap_travel_time"):
     VERSION = 1
@@ -10,12 +13,18 @@ class TmapTravelTimeConfigFlow(config_entries.ConfigFlow, domain="tmap_travel_ti
         if user_input is not None:
             return self.async_create_entry(title=user_input["name"], data=user_input)
 
+        states = self.hass.states.async_all(["zone","device_tracker"])
+
+        entity_ids = {}
+        for state in states:
+            entity_ids[state.entity_id] = f"{state.name}({state.entity_id})"
+
         return self.async_show_form(
             step_id="user",
             data_schema=vol.Schema({
                 vol.Required("name"): str,
-                vol.Required("start_entity"): str,
-                vol.Required("end_entity"): str,
+                vol.Required("start_entity"): vol.In(entity_ids),
+                vol.Required("end_entity"): vol.In(entity_ids),
                 vol.Required("api_key"): str,
                 vol.Optional("scan_interval", default=900): int
             }),
@@ -52,4 +61,3 @@ class TmapTravelTimeOptionsFlow(config_entries.OptionsFlow):
             }),
             errors=errors,
         )
-      
