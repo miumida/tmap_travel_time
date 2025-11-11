@@ -1,0 +1,45 @@
+routes:
+  # Description of the service
+  name: "TMAP 자동차 경로 안내"
+  description: "TMAP 자동차 경로 안내. 출발지에서 목적지까지의 경로 정보를 확인할 수 있습니다."
+  fields:
+    start_x:
+      name: "출발지 X 좌표(경도)의 좌푯값"
+      description: "출발지 X 좌표(경도)의 좌푯값을 지정합니다."
+      required: true
+      example: "126.98605733268329"
+      selector:
+        text:
+    start_y:
+      name: "출발지 Y 좌표(위도)의 좌푯값"
+      description: "출발지 Y 좌표(위도)의 좌푯값을 지정합니다."
+      required: true
+      example: "37.568085523663385"
+      selector:
+        text:
+    end_x:
+      name: "목적지 X 좌표(경도)의 좌푯값"
+      description: "목적지 X 좌표(경도)의 좌푯값을 지정합니다."
+      required: true
+      example: "127.02860151018457"
+      selector:
+        text:
+    end_y:
+      name: "목적지 Y 좌표(위도)의 좌푯값"
+      description: "목적지 Y 좌표(위도)의 좌푯값을 지정합니다."
+      required: true
+      example: "37.263416837831436"
+      selector:
+        text:
+    req_coord_type:
+      name: "응답 좌표계"
+      description: "응답 좌표계를 지정할 수 있으며, 3가지 좌표계를 지원합니다."
+      required: true
+      default: "WGS84GEO"
+      example: "WGS84GEO"
+      selector:
+        select:
+          options:
+            - WGS84GEO
+            - EPSG3857
+            - KATECH
