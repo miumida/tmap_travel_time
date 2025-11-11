@@ -5,6 +5,7 @@ import aiohttp
 import async_timeout
 import logging
 from datetime import timedelta
+import asyncio
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -13,6 +14,7 @@ PLATFORMS = ["sensor"]
 async def async_setup_entry(hass, config_entry, async_add_entities):
     """Set up sensor through config entry."""
     coordinator = TmapDataCoordinator(hass, config_entry)
+    await asyncio.sleep(10)
     await coordinator.async_config_entry_first_refresh()
     async_add_entities([TmapTravelTimeSensor(coordinator, config_entry)])
 
