@@ -1,0 +1,7 @@
+{
+    "services": {
+        "routes": {
+            "service": "mdi:map-marker-path"
+        }
+    }
+}
