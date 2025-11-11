@@ -32,8 +32,6 @@ class TmapDataCoordinator(DataUpdateCoordinator):
         )
         self.config_entry = config_entry
 
-        self._properties = None
-
     async def _async_update_data(self):
         """Fetch data from TMAP API."""
         try:
@@ -83,8 +81,6 @@ class TmapDataCoordinator(DataUpdateCoordinator):
             if response.status != 200:
                 raise UpdateFailed(f"API Error: {result.get('errorMessage', 'Unknown error')}")
 
-            self._properties = result["features"][0]["properties"]
-
             total_time = result["features"][0]["properties"]["totalTime"]
             return round(total_time / 60)
 
@@ -113,11 +109,6 @@ class TmapTravelTimeSensor(SensorEntity, RestoreEntity):
         """Return True if entity is available."""
         return self.coordinator.last_update_success
 
-    @property
-    def extra_state_attributes (self):
-        """Attributes."""
-        return self.coordinator._properties
-
     async def async_added_to_hass(self):
         """When entity is added to hass."""
         await super().async_added_to_hass()
@@ -126,3 +117,4 @@ class TmapTravelTimeSensor(SensorEntity, RestoreEntity):
                 self.async_write_ha_state
             )
         )
+      
